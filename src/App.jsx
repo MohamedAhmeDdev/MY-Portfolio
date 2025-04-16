@@ -1,4 +1,11 @@
 import { useState, useEffect } from 'react';
+import profile from './assets/profile.png';
+import MedopsImage from './assets/medops.png';
+import DoubleDinerImage from './assets/diner.png';
+import HouseholdImage from './assets/house.png';
+import RentDashImage from './assets/rentDash.png';
+import AmanaImage from './assets/amana.png';
+
 
 const Portfolio = () => {
   const [loading, setLoading] = useState(true);
@@ -93,7 +100,7 @@ const Portfolio = () => {
     {
       title: 'Double Diner',
       description: 'A comprehensive food delivery platform enabling customers to order from multiple restaurants with real-time tracking and admin management system.',
-      image: '/assets/diner.png',
+      image: DoubleDinerImage,
       technologies: ['React.js', 'Express.js', 'MySQL', 'Tailwind CSS'],
       liveLink: 'https://double-diner-user.vercel.app/',
       sourceLink: 'https://github.com/MohamedAhmeDdev/Double-Diner',
@@ -102,7 +109,7 @@ const Portfolio = () => {
     {
       title: 'Household Management',
       description: 'A job marketplace connecting homeowners with service providers for household positions, featuring job posting, applications, and reviews.',
-      image: '/assets/house.png',
+      image: HouseholdImage,
       technologies: ['Vue.js', 'Express.js', 'MySQL', 'Bootstrap'],
       liveLink: 'https://household-app.vercel.app/',
       sourceLink: 'https://github.com/MohamedAhmeDdev/Household-management-system'
@@ -110,14 +117,14 @@ const Portfolio = () => {
     {
       title: 'Amana Virtual Solutions',
       description: 'Business process optimization platform offering custom solutions to streamline operations and enhance efficiency for various industries.',
-      image: '/assets/amana.png',
+      image: AmanaImage,
       technologies: ['React.js', 'Node.js', 'MongoDB'],
       liveLink: 'https://amana-website.vercel.app/'
     },
     {
       title: 'MedOps Inventory',
       description: 'Pharmaceutical inventory management system with role-based access control, stock tracking, and distribution workflow automation.',
-      image: '/assets/medops.png',
+      image:  MedopsImage,
       technologies: ['React.js', 'Express.js', 'MySQL', 'Material UI'],
       liveLink: 'https://med-ops.vercel.app/auth',
       sourceLink: 'https://github.com/MohamedAhmeDdev/medOps-v-2.0',
@@ -126,7 +133,7 @@ const Portfolio = () => {
     {
       title: 'rentDash',
       description: 'Property management platform for landlords and tenants featuring lease management, payment tracking, and maintenance requests.',
-      image: '/assets/rentDash.png',
+      image: RentDashImage,
       technologies: ['React.js', 'Express.js', 'MySQL', 'Tailwind CSS'],
       liveLink: 'https://rentdashapp.vercel.app/'
     }
@@ -322,7 +329,7 @@ const Portfolio = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-blue-500 rounded-2xl opacity-20 blur-xl"></div>
                 <img 
-                  src="https://mohamed-a-mohamed.vercel.app/img/92859355-removebg-preview.ffa2380a.png" 
+                  src={profile} 
                   alt="Mohamed Ahmed" 
                   className="relative w-full max-w-md rounded-2xl border-2 border-blue-400/30 shadow-xl" 
                 />
@@ -333,7 +340,7 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6">
+      <section id="about" className="py-20 px-6 bg-gray-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
@@ -347,7 +354,7 @@ const Portfolio = () => {
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-300"></div>
                 <img 
-                  src="https://mohamed-a-mohamed.vercel.app/img/92859355-removebg-preview.ffa2380a.png" 
+                  src={profile} 
                   alt="Profile" 
                   className="relative rounded-lg w-full max-w-md border-2 border-gray-700 shadow-lg transform transition duration-500 group-hover:-translate-y-2" 
                 />
@@ -426,7 +433,7 @@ const Portfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 px-6">
+      <section id="education" className="py-20 px-6 bg-gray-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
@@ -550,7 +557,7 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6">
+      <section id="contact" className="py-20 px-6 bg-gray-800/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">
