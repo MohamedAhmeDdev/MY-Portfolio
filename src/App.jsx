@@ -192,12 +192,6 @@ const Portfolio = () => {
 
   return (
     <div className="bg-gray-900 text-white min-h-screen font-sans antialiased">
-      <div>
-        <title>Mohamed Ahmed | Full-Stack Developer</title>
-        <meta name="description" content="Portfolio of Mohamed Ahmed, Full-Stack JavaScript Developer" />
-        <link rel="icon" href="/favicon.ico" />
-      </div>
-
       {/* Navigation */}
       <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6">
