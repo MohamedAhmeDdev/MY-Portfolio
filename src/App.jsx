@@ -323,7 +323,7 @@ const Portfolio = () => {
                   Contact Me
                 </a>
                 <a 
-                  href="https://drive.google.com/file/d/1yt61jVHaEnQ31aeEyyy5CtTLAGBZmMN4/view?usp=drive_link" 
+                  href="https://drive.google.com/file/d/11cokYrWGqkJ0taKiUcbJNrNSv3KDG6ga/view?usp=drive_link" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-8 py-3 border border-blue-400 text-blue-300 hover:bg-blue-400/10 font-medium rounded-lg transition-colors"
