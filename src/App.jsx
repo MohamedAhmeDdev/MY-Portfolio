@@ -110,7 +110,7 @@ const Portfolio = () => {
       title: 'Household Management',
       description: 'A job marketplace connecting homeowners with service providers for household positions, featuring job posting, applications, and reviews.',
       image: HouseholdImage,
-      technologies: ['Vue.js', 'Express.js', 'MySQL', 'Bootstrap'],
+      technologies: ['Vue.js', 'Express.js', 'MySQL'],
       liveLink: 'https://household-app.vercel.app/',
       sourceLink: 'https://github.com/MohamedAhmeDdev/Household-management-system'
     },
@@ -118,14 +118,14 @@ const Portfolio = () => {
       title: 'Amana Virtual Solutions',
       description: 'Business process optimization platform offering custom solutions to streamline operations and enhance efficiency for various industries.',
       image: AmanaImage,
-      technologies: ['React.js', 'Node.js', 'MongoDB'],
+      technologies: ['React.js', 'Tailwind CSS'],
       liveLink: 'https://amana-website.vercel.app/'
     },
     {
       title: 'MedOps Inventory',
       description: 'Pharmaceutical inventory management system with role-based access control, stock tracking, and distribution workflow automation.',
       image:  MedopsImage,
-      technologies: ['React.js', 'Express.js', 'MySQL', 'Material UI'],
+      technologies: ['React.js', 'Express.js', 'MySQL', 'DaisyUI'],
       liveLink: 'https://med-ops.vercel.app/auth',
       sourceLink: 'https://github.com/MohamedAhmeDdev/medOps-v-2.0',
       hasCredentials: true
@@ -134,7 +134,7 @@ const Portfolio = () => {
       title: 'rentDash',
       description: 'Property management platform for landlords and tenants featuring lease management, payment tracking, and maintenance requests.',
       image: RentDashImage,
-      technologies: ['React.js', 'Express.js', 'MySQL', 'Tailwind CSS'],
+      technologies: ['React.js', 'Express.js', 'MySQL', 'Tailwind CSS' , 'DaisyUI'],
       liveLink: 'https://rentdashapp.vercel.app/'
     }
   ];
