@@ -5,6 +5,7 @@ import HouseholdImage from '../assets/house.png';
 import RentDashImage from '../assets/rentDash.png';
 import AmanaImage from '../assets/amana.png';
 import Modal from './Modal';
+import MotionSection from '../components/motion';
 
 const projects = [
     {
@@ -84,6 +85,7 @@ function Projects() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
+          <MotionSection key={index} threshold={0.4} transitionDelay={index * 0.1}>
           <div 
             key={index} 
             className="bg-gray-800 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-2 group"
@@ -145,6 +147,7 @@ function Projects() {
               </div>
             </div>
           </div>
+          </MotionSection>
         ))}
       </div>
     </div>

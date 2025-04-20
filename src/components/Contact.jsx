@@ -1,4 +1,5 @@
 import React from 'react'
+import MotionSection from '../components/motion';
 
 const contactInfo = [
     {
@@ -52,6 +53,7 @@ function Contact() {
         <div className="max-w-3xl w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {contactInfo.map((info, index) => (
+                 <MotionSection key={index} threshold={0.4} transitionDelay={index * 0.1}>
               <div 
                 key={index} 
                 className="bg-gray-800/70 p-6 text-center items-center rounded-xl hover:bg-gray-800 transition-colors group"
@@ -76,10 +78,12 @@ function Contact() {
                   <p className="text-gray-300">{info.content}</p>
                 )}
               </div>
+              </MotionSection>
             ))}
           </div>
           
           <div className="mt-12 bg-gray-800/70 p-8 rounded-xl text-center">
+          <MotionSection threshold={0.5} transitionDelay={0.5}>
             <h3 className="text-2xl font-semibold text-white mb-6">Connect With Me</h3>
             <div className="flex justify-center space-x-6">
               <a 
@@ -105,6 +109,7 @@ function Contact() {
                 </svg>
               </a>
             </div>
+          </MotionSection>
           </div>
         </div>
       </div>
