@@ -4,6 +4,7 @@ import DoubleDinerImage from '../assets/diner.png';
 import HouseholdImage from '../assets/house.png';
 import RentDashImage from '../assets/rentDash.png';
 import AmanaImage from '../assets/amana.png';
+import Modal from './Modal';
 
 const projects = [
     {
@@ -59,8 +60,16 @@ const projects = [
   
 
 function Projects() {
-  const [showDoubleDinerModal, setShowDoubleDinerModal] = useState(false);
-  const [showMedopsModal, setShowMedopsModal] = useState(false);
+  const [currentProject, setCurrentProject] = useState(null);
+
+  const openModal = (projectTitle) => {
+    const project = projects.find(p => p.title === projectTitle);
+    setCurrentProject(project);
+  };
+
+  const closeModal = () => {
+    setCurrentProject(null);
+  };
 
   return (
     <section id="project" className="py-20 px-6 bg-gray-800/50">
@@ -90,7 +99,7 @@ function Projects() {
               
               {project.hasCredentials && (
                 <button 
-                  onClick={() => project.title === 'Double Diner' ? setShowDoubleDinerModal(true) : setShowMedopsModal(true)}
+                onClick={() => openModal(project.title)}
                   className="text-blue-400 hover:text-blue-300 text-sm mb-4 flex items-center"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -140,157 +149,9 @@ function Projects() {
       </div>
     </div>
 
-
-          {/* Modals */}
-      {showDoubleDinerModal && (
-        <div className="fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-800 border border-gray-700 rounded-xl max-w-md w-full p-6 shadow-2xl">
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-bold text-white">Double Diner Access</h3>
-              <button 
-                onClick={() => setShowDoubleDinerModal(false)}
-                className="text-gray-400 hover:text-white"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="bg-gray-700/50 rounded-lg p-4 mb-6">
-              <div className="flex items-center mb-3">
-                <div className="bg-blue-500/10 rounded-full p-2 mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-300">Role</p>
-                  <p className="font-medium text-white">Administrator</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center mb-3">
-                <div className="bg-blue-500/10 rounded-full p-2 mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-300">Email</p>
-                  <p className="font-medium text-white">mohamed@gmail.com</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center">
-                <div className="bg-blue-500/10 rounded-full p-2 mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-sm text-gray-300">Password</p>
-                  <p className="font-medium text-white">123456789</p>
-                </div>
-              </div>
-            </div>
-            
-            <a 
-              href="https://double-diner-user.vercel.app/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors block"
-            >
-              Go to Double Diner
-            </a>
-          </div>
-        </div>
-      )}
-
-      {showMedopsModal && (
-        <div className="fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-800 border border-gray-700 rounded-xl max-w-md w-full p-6 shadow-2xl">
-            <div className="flex justify-between items-start mb-4">
-              <h3 className="text-xl font-bold text-white">MedOps Inventory Access</h3>
-              <button 
-                onClick={() => setShowMedopsModal(false)}
-                className="text-gray-400 hover:text-white"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            
-            <div className="space-y-4 mb-6">
-              <div className="bg-gray-700/50 rounded-lg p-4">
-                <h4 className="text-blue-400 font-medium mb-2">1. Manager Account</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <p className="text-xs text-gray-400">Username</p>
-                    <p className="text-sm text-white">juma ali</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400">Password</p>
-                    <p className="text-sm text-white">nDSzuVF2</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-gray-700/50 rounded-lg p-4">
-                <h4 className="text-blue-400 font-medium mb-2">2. Logistics Account</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <p className="text-xs text-gray-400">Username</p>
-                    <p className="text-sm text-white">peter cain</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400">Password</p>
-                    <p className="text-sm text-white">aa92qRsu</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-gray-700/50 rounded-lg p-4">
-                <h4 className="text-blue-400 font-medium mb-2">3. Operator Account</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <p className="text-xs text-gray-400">Username</p>
-                    <p className="text-sm text-white">dom</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400">Password</p>
-                    <p className="text-sm text-white">s4mcVhcT</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-gray-700/50 rounded-lg p-4">
-                <h4 className="text-blue-400 font-medium mb-2">4. Transporter Account</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  <div>
-                    <p className="text-xs text-gray-400">Username</p>
-                    <p className="text-sm text-white">abdi</p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400">Password</p>
-                    <p className="text-sm text-white">fTRskDzh</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <a 
-              href="https://med-ops.vercel.app/auth" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors block"
-            >
-              Go to MedOps
-            </a>
-          </div>
-        </div>
-      )}
+    {currentProject && (
+      <Modal project={currentProject} closeModal={closeModal}/>
+    )}
   </section>
 
   
