@@ -56,7 +56,7 @@ function Contact() {
                  <MotionSection key={index} threshold={0.4} transitionDelay={index * 0.1}>
               <div 
                 key={index} 
-                className="bg-gray-800/70 p-6 text-center items-center rounded-xl hover:bg-gray-800 transition-colors group"
+                className="bg-gray-700/50 p-6 text-center items-center rounded-xl hover:bg-gray-800 transition-colors group"
               >
                 <div className="bg-blue-500/10 rounded-full w-14 h-14 flex items-center justify-center mb-4 mx-auto group-hover:bg-blue-500/20 transition-colors">
                   <span className="text-blue-400 text-2xl">{info.icon}</span>
@@ -82,7 +82,7 @@ function Contact() {
             ))}
           </div>
           
-          <div className="mt-12 bg-gray-800/70 p-8 rounded-xl text-center">
+          <div className="mt-12 bg-gray-700/50 p-8 rounded-xl text-center">
           <MotionSection threshold={0.5} transitionDelay={0.5}>
             <h3 className="text-2xl font-semibold text-white mb-6">Connect With Me</h3>
             <div className="flex justify-center space-x-6">
