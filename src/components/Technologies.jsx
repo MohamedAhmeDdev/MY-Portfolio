@@ -1,7 +1,9 @@
 import React from 'react'
 import MotionSection from '../components/motion';
+import SkillsCard from '../Cards/SkillsCard';
+import OtherSkills from '../Cards/OtherSkills';
 
-const technologies = [
+const frontend = [
     { name: 'JavaScript', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg' },
     { name: 'React.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg' },
     { name: 'Vue.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg' },
@@ -10,10 +12,20 @@ const technologies = [
     { name: 'CSS3', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg' },
     { name: 'Tailwind CSS', icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg' },
     { name: 'Bootstrap', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg' },
+  ];
+
+  const backend = [
     { name: 'Node.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg' },
     { name: 'Express.js', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg' },
     { name: 'MySQL', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg' },
-    { name: 'Git', icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg' }
+  ];
+
+  const tools = [
+    {name: 'Responsive Design'},
+      {name: 'SEO Optimization'},
+    { name: 'Git & Github' },
+    {name: 'CI/CD' },
+    { name: 'Vercel' },
   ];
 
 function Technologies() {
@@ -30,18 +42,28 @@ function Technologies() {
             </MotionSection>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          {technologies.map((tech, index) => (
-            <MotionSection key={index} threshold={0.4} transitionDelay={index * 0.1}>
-              <div className="bg-gray-700/50 rounded-xl p-6 flex flex-col items-center hover:bg-gray-700 transition-all duration-300 hover:-translate-y-2 shadow-md hover:shadow-lg">
-                <div className="bg-gray-800/50 p-3 rounded-full mb-4">
-                  <img src={tech.icon} alt={tech.name} className="h-10 w-10 object-contain" />
-                </div>
-                <span className="text-white font-medium text-center">{tech.name}</span>
-              </div>
-            </MotionSection>
-          ))}
-        </div>
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold mb-6 text-white">Frontend</h3>
+             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+               {frontend.map((tech, index) => (
+                <SkillsCard index={index} tech={tech} />
+               ))}
+             </div>
+          </div>
+
+           <div className="mb-12">
+             <h3 className="text-2xl font-semibold mb-6 text-white">Backend</h3>
+             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+               {backend.map((tech, index) => (
+                <SkillsCard index={index} tech={tech} />
+               ))}
+             </div>
+           </div>
+
+          <div className="mt-12">
+            <h3 className="text-xl font-bold mb-4">Additional Skills</h3>
+             <OtherSkills tech={tools} />
+          </div>
         </div>
       </section>
   )
