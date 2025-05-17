@@ -42,8 +42,8 @@ function Education() {
                   <div className="bg-gray-800/70 hover:bg-gray-800 rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                     <p className="text-blue-400 font-medium mb-2">{edu.period}</p>
                     <h3 className="text-xl font-semibold text-white mb-3">{edu.title}</h3>
-                    <h4 className="text-lg font-medium text-gray-300 mb-3">{edu.institution}</h4>
-                    <p className="text-gray-400">{edu.description}</p>
+                    <h4 className="text-md font-medium text-gray-300 mb-3">{edu.institution}</h4>
+                    <p className="text-gray-400 text-sm">{edu.description}</p>
                   </div>
                 </div>
               </MotionSection>
