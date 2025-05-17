@@ -7,7 +7,7 @@ function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="mb-6 md:mb-0">
           <a href="/" className="text-xl font-bold text-blue-400">Mohamed Ahmed</a>
-          <p className="text-gray-400 text-sm mt-2">Full-Stack JavaScript Developer</p>
+          <p className="text-gray-400 text-sm mt-2">Full-Stack Developer</p>
         </div>
         
         <div className="flex space-x-6">
