@@ -14,7 +14,8 @@ const projects = [
       title: 'Double Diner',
       description: 'A comprehensive food delivery platform enabling customers to browse restaurants, place orders, and track deliveries in real time. Built with React.js for the frontend, Express.js for the backend, and MySQL for secure data storage, the platform features an intuitive user interface styled with Tailwind CSS and includes an admin management system.',      image: DoubleDinerImage,
       technologies: ['React.js', 'Express.js', 'MySQL', 'Tailwind CSS'],
-      liveLink: 'https://double-diner-user.vercel.app/',
+      liveLink: 'https://double-diner.netlify.app/',
+      adminLink: 'https://double-diner-admin.netlify.app/',
       sourceLink: 'https://github.com/MohamedAhmeDdev/Double-Diner',
       hasCredentials: true,
       access:[
@@ -25,7 +26,7 @@ const projects = [
       title: 'Household Management',
       description: 'A job marketplace platform connecting homeowners with service providers for household tasks. Built with Vue.js for the frontend, Express.js for the backend, and MySQL for reliable data management, the system enables job posting, applications, and reviews within a responsive and modern interface.',      image: HouseholdImage,
       technologies: ['Vue.js', 'Express.js', 'MySQL'],
-      liveLink: 'https://household-app.vercel.app/',
+      liveLink: 'https://find-household.netlify.app/',
       sourceLink: 'https://github.com/MohamedAhmeDdev/Household-management-system'
     },
     {
@@ -33,14 +34,14 @@ const projects = [
       description: 'A business process optimization platform designed to streamline operations and enhance efficiency across industries. Built with React.js for the frontend and styled with Tailwind CSS, the application provides a sleek, responsive interface to deliver custom solutions for businesses.',
       image: AmanaImage,
       technologies: ['React.js', 'Tailwind CSS'],
-      liveLink: 'https://amana-website.vercel.app/'
+      liveLink: 'https://amana-virtual-solutions.netlify.app/'
     },
     {
       title: 'MedOps Inventory',
       description: 'A pharmaceutical inventory management system supporting role-based access control, stock monitoring, and workflow automation for distribution. Developed with React.js for the frontend, Express.js for the backend, and MySQL for secure storage, the application features a modern interface styled with DaisyUI and Tailwind CSS.',
       image:  MedopsImage,
       technologies: ['React.js', 'Express.js', 'MySQL', 'DaisyUI'],
-      liveLink: 'https://med-ops.vercel.app/auth',
+      liveLink: 'https://medops.netlify.app/',
       sourceLink: 'https://github.com/MohamedAhmeDdev/medOps-v-2.0',
       hasCredentials: true,
       access:[
@@ -55,21 +56,21 @@ const projects = [
       description: 'A property management platform for landlords and tenants featuring lease management, rent tracking, and maintenance request handling. Built with React.js, Express.js, and MySQL, the application delivers a seamless experience with a modern interface powered by Tailwind CSS and DaisyUI.',
       image: RentDashImage,
       technologies: ['React.js', 'Express.js', 'MySQL', 'Tailwind CSS' , 'DaisyUI'],
-      liveLink: 'https://rentdashapp.vercel.app/'
+      liveLink: 'https://rentdashapp.netlify.app/'
     },
     {
     title: 'CRM',
     description: 'A customer relationship management system designed to streamline client interactions, track sales activities, and manage business workflows. Built with Vite.js for the frontend, Express.js for the backend, and MySQL for secure data management, the platform provides a responsive UI styled with Tailwind CSS.',
     image: CRMImage,
     technologies: ['vite.js', 'Express.js', 'MySQL', 'Tailwind CSS'],
-    liveLink: 'https://crm-phi-eight.vercel.app/'
+    liveLink: 'https://client-crm.netlify.app/'
     },
     {
       title: 'luxury-makeup-salon',
       description: 'A modern web application for booking salon services, showcasing makeup packages, and managing client appointments. Built with Vite.js, Express.js, and MySQL, the platform delivers a seamless user experience with a stylish interface powered by Tailwind CSS.',
       image: luxuryMakeupSalonImage,
       technologies: ['vite.js', 'Express.js', 'MySQL', 'Tailwind CSS'],
-      liveLink: 'https://luxury-makeup-salon.vercel.app/'
+      liveLink: 'https://glambyrahmah.netlify.app/'
     }
 ];
   
