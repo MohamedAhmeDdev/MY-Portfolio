@@ -36,7 +36,7 @@ function Modal({ project, closeModal }) {
         </div>
         
         <a 
-          href={project.liveLink} 
+          href={project.adminLink} 
           target="_blank" 
           rel="noopener noreferrer"
           className="w-full bg-blue-400 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors block"
