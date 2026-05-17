@@ -1,1 +1,95 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Base background and surface styles */
+    --bg-app: #fafafa;
+    --text-main: #0a0a0f;
+    --border-alpha: rgba(0, 0, 0, 0.08);
+    --border-alpha-subtle: rgba(0, 0, 0, 0.05);
+    --surface-alpha: rgba(0, 0, 0, 0.02);
+    --surface-alpha-hover: rgba(0, 0, 0, 0.05);
+    --text-muted: rgba(0, 0, 0, 0.55);
+    --text-low-contrast: rgba(0, 0, 0, 0.40);
+
+    /* Project Specific System Tokens (Light Mode handles) */
+    --saas-accent: var(--color-emerald-600);
+    --saas-bg: rgba(16, 185, 129, 0.06);
+    --saas-hover-border: rgba(16, 185, 129, 0.3);
+
+    --ds-accent: var(--color-indigo-600);
+    --ds-bg: rgba(99, 102, 241, 0.06);
+    --ds-hover-border: rgba(99, 102, 241, 0.3);
+
+    --iot-accent: var(--color-amber-600);
+    --iot-bg: rgba(245, 158, 11, 0.06);
+    --iot-hover-border: rgba(245, 158, 11, 0.3);
+
+    --mobile-accent: var(--color-pink-600);
+    --mobile-bg: rgba(236, 72, 153, 0.06);
+    --mobile-hover-border: rgba(236, 72, 153, 0.3);
+  }
+
+  .dark {
+    /* Dark Theme Token Overrides */
+    --bg-app: #0a0a0f;
+    --text-main: #ffffff;
+    --border-alpha: rgba(255, 255, 255, 0.08);
+    --border-alpha-subtle: rgba(255, 255, 255, 0.05);
+    --surface-alpha: rgba(255, 255, 255, 0.03);
+    --surface-alpha-hover: rgba(255, 255, 255, 0.10);
+    --text-muted: rgba(255, 255, 255, 0.60);
+    --text-low-contrast: rgba(255, 255, 255, 0.40);
+
+    /* Project Specific System Tokens (Dark Mode handles) */
+    --saas-accent: var(--color-emerald-400);
+    --saas-bg: rgba(16, 185, 129, 0.08);
+    --saas-hover-border: rgba(16, 185, 129, 0.4);
+
+    --ds-accent: var(--color-indigo-400);
+    --ds-bg: rgba(99, 102, 241, 0.08);
+    --ds-hover-border: rgba(99, 102, 241, 0.4);
+
+    --iot-accent: var(--color-amber-400);
+    --iot-bg: rgba(245, 158, 11, 0.08);
+    --iot-hover-border: rgba(245, 158, 11, 0.4);
+
+    --mobile-accent: var(--color-pink-400);
+    --mobile-bg: rgba(236, 72, 153, 0.08);
+    --mobile-hover-border: rgba(236, 72, 153, 0.4);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* --- Dynamic Theme Assignments via CSS properties --- */
+.bg-app-theme { background-color: var(--bg-app); }
+.text-main-theme { color: var(--text-main); }
+.border-theme { border-color: var(--border-alpha); }
+.border-theme-subtle { border-color: var(--border-alpha-subtle); }
+.bg-surface-theme { background-color: var(--surface-alpha); }
+.text-muted-theme { color: var(--text-muted); }
+.text-low-contrast-theme { color: var(--text-low-contrast); }
+
+/* --- Ambient Floating Animations --- */
+@keyframes float-primary {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+@keyframes float-secondary {
+  0%, 100% { transform: translateY(0px) scale(1.05); }
+  50% { transform: translateY(15px) scale(0.95); }
+}
+@keyframes float-tertiary {
+  0%, 100% { transform: translate(0px, 0px); }
+  50% { transform: translate(-15px, 15px); }
+}
+
+.animate-float-1 { animation: float-primary 14s ease-in-out infinite; }
+.animate-float-2 { animation: float-secondary 18s ease-in-out infinite; }
+.animate-float-3 { animation: float-tertiary 12s ease-in-out infinite; }
+.animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }

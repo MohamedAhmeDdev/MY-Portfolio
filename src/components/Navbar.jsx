@@ -1,126 +1,82 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 
-function Navbar({ scrolled, activeSection, setActiveSection, showMobileMenu, setShowMobileMenu }) {
+export default function Navbar({ dark, toggleDark, navLinks }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const scrollToSection = (sectionId) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          window.scrollTo({
-            top: element.offsetTop - 80,
-            behavior: 'smooth'
-          });
-          setActiveSection(sectionId);
-          setShowMobileMenu(false);
-        }
-      }
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollTo = (id) => {
+    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+  };
+
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="flex justify-between items-center h-20">
-        <div className="flex-shrink-0">
-          <a href="/" className="text-2xl font-bold text-blue-400"><span className=""></span>Mohamed Ahmed</a>
-        </div>
-        
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
-          <button 
-            onClick={() => scrollToSection('home')}
-            className={`text-lg font-medium transition-colors ${activeSection === 'home' ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
-          >
-            Home
-          </button>
-          <button 
-            onClick={() => scrollToSection('about')}
-            className={`text-lg font-medium transition-colors ${activeSection === 'about' ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
-          >
-            About
-          </button>
-          <button 
-            onClick={() => scrollToSection('technologies')}
-            className={`text-lg font-medium transition-colors ${activeSection === 'technologies' ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
-          >
-            Skills
-          </button>
-          <button 
-            onClick={() => scrollToSection('education')}
-            className={`text-lg font-medium transition-colors ${activeSection === 'education' ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
-          >
-            Education
-          </button>
-          <button 
-            onClick={() => scrollToSection('project')}
-            className={`text-lg font-medium transition-colors ${activeSection === 'project' ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
-          >
-            Projects
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className={`text-lg font-medium transition-colors ${activeSection === 'contact' ? 'text-blue-400' : 'text-gray-300 hover:text-white'}`}
-          >
-            Contact
-          </button>
-        </div>
-        
-        {/* Mobile menu button */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setShowMobileMenu(!showMobileMenu)}
-            className="text-white focus:outline-none p-2 rounded-md hover:bg-gray-800"
-            aria-label="Toggle Menu"
-          >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={showMobileMenu ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-    
-    {/* Mobile Navigation */}
-    {showMobileMenu && (
-      <div className="md:hidden bg-gray-800/95 backdrop-blur-sm">
-        <div className="px-4 pt-2 pb-4 space-y-2">
-          <button 
-            onClick={() => scrollToSection('home')}
-            className={`block w-full text-left px-4 py-3 rounded-md ${activeSection === 'home' ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-gray-700'}`}
-          >
-            Home
-          </button>
-          <button 
-            onClick={() => scrollToSection('about')}
-            className={`block w-full text-left px-4 py-3 rounded-md ${activeSection === 'about' ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-gray-700'}`}
-          >
-            About
-          </button>
-          <button 
-            onClick={() => scrollToSection('technologies')}
-            className={`block w-full text-left px-4 py-3 rounded-md ${activeSection === 'technologies' ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-gray-700'}`}
-          >
-            Skills
-          </button>
-          <button 
-            onClick={() => scrollToSection('education')}
-            className={`block w-full text-left px-4 py-3 rounded-md ${activeSection === 'education' ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-gray-700'}`}
-          >
-            Education
-          </button>
-          <button 
-            onClick={() => scrollToSection('project')}
-            className={`block w-full text-left px-4 py-3 rounded-md ${activeSection === 'project' ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-gray-700'}`}
-          >
-            Projects
-          </button>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className={`block w-full text-left px-4 py-3 rounded-md ${activeSection === 'contact' ? 'bg-blue-400 text-white' : 'text-gray-300 hover:bg-gray-700'}`}
-          >
-            Contact
-          </button>
-        </div>
-      </div>
-    )}
-  </nav>
-  )
-}
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      scrolled 
+        ? "bg-app-theme/85 border-theme backdrop-blur-xl border-b" 
+        : "bg-transparent border-transparent"
+    }`}>
+      <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
+        <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="bg-none border-none cursor-pointer p-0">
+          <span className="font-serif font-bold text-xl md:text-2xl bg-gradient-to-r from-emerald-400 via-indigo-500 to-pink-500 bg-clip-text text-transparent tracking-tight">
+            Mohamed.Ahmed
+          </span>
+        </button>
 
-export default Navbar
+        {/* Desktop Navigation */}
+        <div className="hidden sm:flex items-center gap-2">
+          {navLinks.map((l) => (
+            <button
+              key={l}
+              onClick={() => scrollTo(l)}
+              className="bg-none border-none cursor-pointer font-sans text-sm font-medium px-4 py-2 rounded-lg transition-all tracking-wide text-muted-theme hover:text-main-theme hover:bg-surface-theme"
+            >
+              {l}
+            </button>
+          ))}
+          <button
+            onClick={toggleDark}
+            className="ml-2 border-none cursor-pointer rounded-xl w-10 h-10 flex items-center justify-center transition-all bg-surface-theme text-main-theme hover:brightness-110"
+          >
+            {dark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
+
+        {/* Mobile Actions */}
+        <div className="flex sm:hidden gap-2">
+          <button onClick={toggleDark} className="bg-none border-none cursor-pointer p-2 text-main-theme">
+            {dark ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button 
+            onClick={() => setMenuOpen(!menuOpen)} 
+            className="bg-none border-none cursor-pointer p-2 flex items-center justify-center text-main-theme"
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Dropdown Drawer */}
+      <div className={`overflow-hidden transition-all duration-300 ease-in-out backdrop-blur-xl bg-app-theme/95 ${
+        menuOpen ? "max-h-72 opacity-100 border-b border-theme" : "max-h-0 opacity-0 border-transparent"
+      }`}>
+        {navLinks.map(l => (
+          <button 
+            key={l} 
+            onClick={() => scrollTo(l)} 
+            className="block w-full px-6 py-4 text-left bg-none border-none cursor-pointer font-sans text-base font-medium text-muted-theme border-b border-theme-subtle last:border-none"
+          >
+            {l}
+          </button>
+        ))}
+      </div>
+    </nav>
+  );
+}

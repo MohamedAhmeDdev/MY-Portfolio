@@ -1,97 +1,79 @@
-import React from 'react';
-import MotionSection from '../components/motion';
-import { FiArrowRight, FiAward, FiCode, FiCpu, FiDatabase, FiLayers, FiUsers } from 'react-icons/fi';
-function About() {
-  return (
-    <section id="about" className="py-20 px-6 bg-gray-800/50">
-     <div className="2xl:max-w-4xl 2xl:mx-auto">
+import AnimatedSection from "./AnimatedSection";
 
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-blue-400">About</span> Me
-          </h2>
-          <div className="w-20 h-1 bg-blue-500 mx-auto"></div>
-        </div>
+export default function About({ tools }) {
+  return (
+    <section id="about" className="py-24 px-6 relative z-10">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
-        <MotionSection threshold={0.3} transitionDelay={0.2}>
-          <div className="space-y-12">
-            <div className="text-center md:text-left max-w-3xl mx-auto md:mx-0">
-              <h3 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-                Crafting Digital Solutions That Matter
-              </h3>
-              
-              <p className="text-md text-gray-300 leading-relaxed mb-6">
-                I'm a passionate full-stack developer specializing in modern JavaScript technologies. With expertise across the entire stack, I create performant, accessible web applications that deliver exceptional user experiences.
+        {/* Biography Content Block */}
+       <AnimatedSection className="order-2 lg:order-1" direction="right" delay={0.1}>
+          <p className="font-sans text-xs font-bold tracking-[0.2em] mb-3 text-low-contrast-theme uppercase">
+            ABOUT ME
+          </p>
+          <h2 className="font-serif font-bold text-3xl sm:text-4xl tracking-tight mb-6 text-main-theme">
+            Craft is in the details.
+          </h2>
+          <div className="space-y-4">
+            {[
+              "I'm a full-stack Developer with a passion for the intersection of engineering excellence and visual design. Based in Kenya, I've spent 2+ years building products that prioritize performance, accessibility, and user experience.",
+              "My approach is simple: understand the problem deeply, prototype fast, and polish until every interaction feels inevitable.",
+              "When I'm not building, you'll find me exploring the latest design trends. I believe great products require both technical rigor and a designer's eye for detail, and I strive to bring both to every project I work on."
+            ].map((p, i) => (
+              <p key={i} className="font-sans text-sm sm:text-base leading-relaxed text-muted-theme">
+                {p}
               </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-              <div className="space-y-8">
-                 <MotionSection threshold={0.3} transitionDelay={0.2}>
-                  <div className="bg-gray-800/60 p-6 rounded-xl border border-gray-700/50 shadow-lg">
-                    <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                      <FiCode className="text-blue-400" /> My Philosophy
-                    </h4>
-                    <p className="text-gray-300  text-sm leading-relaxed">
-                      I believe in building software that's not just functional but delightful to use. My approach combines clean code principles with thoughtful UI/UX design, ensuring maintainable systems that users love.
-                    </p>
-                  </div>
-                </MotionSection>
-                
-                 <MotionSection threshold={0.3} transitionDelay={0.2}>
-                  <div className="bg-gray-800/60 p-6 rounded-xl border border-gray-700/50 shadow-lg">
-                    <h4 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                      <FiUsers className="text-blue-400" /> My Approach
-                    </h4>
-                    <p className="text-gray-300 text-sm leading-relaxed">
-                      I thrive on solving complex problems through collaborative development. Whether working solo or in a team, I focus on understanding user needs and delivering solutions that create real value.
-                    </p>
-                  </div>
-                </MotionSection>
-              </div>
-              
-               <MotionSection threshold={0.3} transitionDelay={0.2}>
-                <div className="bg-gray-800/70 p-8 rounded-xl border border-gray-700/50 shadow-lg">
-                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                    <FiAward className="text-blue-400" /> Key Highlights
-                  </h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <span className="text-blue-400 mt-1"><FiCpu /></span>
-                      <div>
-                        <h4 className="font-semibold text-white">Full-Stack Mastery</h4>
-                        <p className="text-gray-300 text-sm">3+ years developing scalable applications with React, Node.js, and modern web technologies</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-blue-400 mt-1"><FiLayers /></span>
-                      <div>
-                        <h4 className="font-semibold text-white">Client Success</h4>
-                        <p className="text-gray-300 text-sm">Delivered impactful solutions for diverse clients, from startups to enterprises</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <span className="text-blue-400 mt-1"><FiDatabase /></span>
-                      <div>
-                        <h4 className="font-semibold text-white">Software Engineering</h4>
-                        <p className="text-gray-300 text-sm">Strong foundation in software development principles and continuous skill enhancement</p>
-                      </div>
-                    </li>
-                  </ul>
-                  
-                  <div className="mt-8 py-4 px-2  bg-gray-900/50 rounded-lg border border-gray-700/30">
-                    <p className="text-sm text-gray-300 italic">
-                      "I love solving real-world problems through code. I'm always excited to create meaningful digital experiences."
-                    </p>
-                  </div>
-                </div>
-              </MotionSection>
-            </div>
+            ))}
           </div>
-        </MotionSection>
+          
+          {/* Tech stack badge block */}
+          <div className="mt-8 flex flex-wrap gap-2">
+            {tools.map(t => (
+              <span key={t} className="font-sans text-xs font-semibold px-3 py-1 rounded-full border border-theme-subtle bg-surface-theme text-muted-theme">
+                {t}
+              </span>
+            ))}
+          </div>
+        </AnimatedSection>
+        
+        {/* Interactive Stylized Card Canvas */}
+      <AnimatedSection delay={0.2} className="order-1 lg:order-2" direction="left">
+          <div className="relative rounded-3xl overflow-hidden aspect-square max-w-sm w-full mx-auto border border-theme-subtle bg-surface-theme">
+            <div className="absolute inset-0 bg-radial from-indigo-500/15 via-emerald-500/5 to-transparent blur-xl pointer-events-none" />
+            
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+              <div className="font-serif font-black text-7xl sm:text-8xl tracking-tighter leading-none select-none text-main-theme/5">
+                MA
+              </div>
+              <div className="font-sans text-xs font-medium tracking-wide mt-3 text-low-contrast-theme max-w-[200px]">
+                Full-stack engineer & design-minded builder
+              </div>
+            </div>
+
+            {/* Absolute Position Floating Accent Badges */}
+            {[
+              { label: "React", x: "8%", y: "14%", color: "#6366f1" },
+              { label: "SEO", x: "12%", y: "42%", color: "#6366f1" },
+              { label: "JavaScript", x: "55%", y: "10%", color: "#10b981" },
+              { label: "Performance", x: "52%", y: "82%", color: "#f59e0b" },
+              { label: "Tailwind CSS", x: "8%", y: "78%", color: "#ec4899" },
+            ].map(tag => (
+              <div 
+                key={tag.label} 
+                style={{ 
+                  left: tag.x, 
+                  top: tag.y, 
+                  color: tag.color, 
+                  borderColor: `${tag.color}30`, 
+                  backgroundColor: `${tag.color}08` 
+                }}
+                className="absolute font-sans text-[10px] font-bold px-2.5 py-1 rounded-full border backdrop-blur-md shadow-sm select-none whitespace-nowrap"
+              >
+                {tag.label}
+              </div>
+            ))}
+          </div>
+        </AnimatedSection>
       </div>
     </section>
-  )
+  );
 }
-
-export default About
