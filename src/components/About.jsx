@@ -45,7 +45,7 @@ export default function About({ tools }) {
                 MA
               </div>
               <div className="font-sans text-xs font-medium tracking-wide mt-3 text-low-contrast-theme max-w-[200px]">
-                Full-stack engineer & design-minded builder
+                Crafted with care, built for performance.
               </div>
             </div>
 

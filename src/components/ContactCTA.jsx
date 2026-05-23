@@ -19,7 +19,7 @@ export default function ContactCTA({ onOpenModal }) {
         </p>
         <button
           onClick={onOpenModal}
-          className="font-sans text-xs font-bold px-8 py-4 rounded-full transition-all active:scale-95 shadow-sm tracking-wide cursor-pointer bg-[#0a0a0f] text-white hover:bg-[#0a0a0f]/90 dark:bg-white dark:text-[#0a0a0f] dark:hover:bg-white/90"
+          className="font-sans text-xs font-bold px-8 py-4 rounded-full transition-all active:scale-95 shadow-sm tracking-wide cursor-pointer bg-btn-primary text-btn-primary text-white"
         >
           Initiate Conversation
         </button>

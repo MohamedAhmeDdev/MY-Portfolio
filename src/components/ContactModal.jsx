@@ -37,9 +37,9 @@ export default function ContactModal({ dark, onClose }) {
   const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;  
 
   const templateParams = {
-    name: form.name,      // ✅ Matches {{name}} in template
-    email: form.email,    // ✅ Matches {{email}} in template
-    message: form.message, // ✅ Matches {{message}} in template
+    name: form.name,     
+    email: form.email,   
+    message: form.message, 
     reply_to: form.email,
   };
 
@@ -189,7 +189,7 @@ export default function ContactModal({ dark, onClose }) {
                   className={`w-full sm:w-auto px-6 py-3 rounded-xl font-sans text-sm font-bold transition-all duration-300 min-w-[140px] active:scale-95 text-center order-1 sm:order-2 ${
                     sending
                       ? "bg-surface-theme text-low-contrast-theme cursor-not-allowed opacity-50"
-                      : "bg-gradient-to-r from-emerald-400 to-indigo-500 text-white hover:opacity-95 shadow-sm cursor-pointer"
+                      : "bg-btn-primary text-btn-primary text-white hover:opacity-95 shadow-sm cursor-pointer"
                   }`}
                 >
                   {sending ? "Sending…" : "Send message →"}

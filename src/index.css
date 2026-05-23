@@ -11,23 +11,28 @@
     --surface-alpha-hover: rgba(0, 0, 0, 0.05);
     --text-muted: rgba(0, 0, 0, 0.55);
     --text-low-contrast: rgba(0, 0, 0, 0.40);
+--btn-primary-bg: #000000;
+  --btn-primary-text: #ffffff;
+    /* Explicit Color System Tokens (Light Mode) */
+    --theme-green-accent: var(--color-emerald-600);
+    --theme-green-bg: rgba(16, 185, 129, 0.06);
+    --theme-green-hover: rgba(16, 185, 129, 0.3);
 
-    /* Project Specific System Tokens (Light Mode handles) */
-    --saas-accent: var(--color-emerald-600);
-    --saas-bg: rgba(16, 185, 129, 0.06);
-    --saas-hover-border: rgba(16, 185, 129, 0.3);
+    --theme-yellow-accent: var(--color-amber-600);
+    --theme-yellow-bg: rgba(245, 158, 11, 0.06);
+    --theme-yellow-hover: rgba(245, 158, 11, 0.3);
 
-    --ds-accent: var(--color-indigo-600);
-    --ds-bg: rgba(99, 102, 241, 0.06);
-    --ds-hover-border: rgba(99, 102, 241, 0.3);
+    --theme-blue-accent: var(--color-blue-600);
+    --theme-blue-bg: rgba(59, 130, 246, 0.06);
+    --theme-blue-hover: rgba(59, 130, 246, 0.3);
 
-    --iot-accent: var(--color-amber-600);
-    --iot-bg: rgba(245, 158, 11, 0.06);
-    --iot-hover-border: rgba(245, 158, 11, 0.3);
+    --theme-cyan-accent: var(--color-cyan-600);
+    --theme-cyan-bg: rgba(6, 182, 212, 0.06);
+    --theme-cyan-hover: rgba(6, 182, 212, 0.3);
 
-    --mobile-accent: var(--color-pink-600);
-    --mobile-bg: rgba(236, 72, 153, 0.06);
-    --mobile-hover-border: rgba(236, 72, 153, 0.3);
+    --theme-pink-accent: var(--color-pink-600);
+    --theme-pink-bg: rgba(236, 72, 153, 0.06);
+    --theme-pink-hover: rgba(236, 72, 153, 0.3);
   }
 
   .dark {
@@ -40,23 +45,28 @@
     --surface-alpha-hover: rgba(255, 255, 255, 0.10);
     --text-muted: rgba(255, 255, 255, 0.60);
     --text-low-contrast: rgba(255, 255, 255, 0.40);
+--btn-primary-bg: #ffffff;
+  --btn-primary-text: #000000;
+    /* Explicit Color System Tokens (Dark Mode) */
+    --theme-green-accent: var(--color-emerald-400);
+    --theme-green-bg: rgba(16, 185, 129, 0.08);
+    --theme-green-hover: rgba(16, 185, 129, 0.4);
 
-    /* Project Specific System Tokens (Dark Mode handles) */
-    --saas-accent: var(--color-emerald-400);
-    --saas-bg: rgba(16, 185, 129, 0.08);
-    --saas-hover-border: rgba(16, 185, 129, 0.4);
+    --theme-yellow-accent: var(--color-amber-400);
+    --theme-yellow-bg: rgba(245, 158, 11, 0.08);
+    --theme-yellow-hover: rgba(245, 158, 11, 0.4);
 
-    --ds-accent: var(--color-indigo-400);
-    --ds-bg: rgba(99, 102, 241, 0.08);
-    --ds-hover-border: rgba(99, 102, 241, 0.4);
+    --theme-blue-accent: var(--color-blue-400);
+    --theme-blue-bg: rgba(59, 130, 246, 0.08);
+    --theme-blue-hover: rgba(59, 130, 246, 0.4);
 
-    --iot-accent: var(--color-amber-400);
-    --iot-bg: rgba(245, 158, 11, 0.08);
-    --iot-hover-border: rgba(245, 158, 11, 0.4);
+    --theme-cyan-accent: var(--color-cyan-400);
+    --theme-cyan-bg: rgba(6, 182, 212, 0.08);
+    --theme-cyan-hover: rgba(6, 182, 212, 0.4);
 
-    --mobile-accent: var(--color-pink-400);
-    --mobile-bg: rgba(236, 72, 153, 0.08);
-    --mobile-hover-border: rgba(236, 72, 153, 0.4);
+    --theme-pink-accent: var(--color-pink-400);
+    --theme-pink-bg: rgba(236, 72, 153, 0.08);
+    --theme-pink-hover: rgba(236, 72, 153, 0.4);
   }
 
   html {
@@ -66,7 +76,7 @@
   }
 }
 
-/* --- Dynamic Theme Assignments via CSS properties --- */
+/* Dynamic Theme Assignment Classes */
 .bg-app-theme { background-color: var(--bg-app); }
 .text-main-theme { color: var(--text-main); }
 .border-theme { border-color: var(--border-alpha); }
@@ -74,8 +84,9 @@
 .bg-surface-theme { background-color: var(--surface-alpha); }
 .text-muted-theme { color: var(--text-muted); }
 .text-low-contrast-theme { color: var(--text-low-contrast); }
-
-/* --- Ambient Floating Animations --- */
+.bg-btn-primary { background-color: var(--btn-primary-bg); }
+.text-btn-primary { color: var(--btn-primary-text); }
+/* Ambient Floating Animations */
 @keyframes float-primary {
   0%, 100% { transform: translateY(0px) scale(1); }
   50% { transform: translateY(-20px) scale(1.05); }

@@ -24,8 +24,8 @@ export default function Navbar({ dark, toggleDark, navLinks }) {
     }`}>
       <div className="max-w-6xl mx-auto px-6 md:px-8 h-16 flex items-center justify-between">
         <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="bg-none border-none cursor-pointer p-0">
-          <span className="font-serif font-bold text-xl md:text-2xl bg-gradient-to-r from-emerald-400 via-indigo-500 to-pink-500 bg-clip-text text-transparent tracking-tight">
-            Mohamed.Ahmed
+          <span className="font-serif font-bold text-xl md:text-2xl text-main-theme tracking-tight">
+            Mohamed Ahmed
           </span>
         </button>
 

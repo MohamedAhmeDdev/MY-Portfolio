@@ -30,10 +30,10 @@ export default function ProjectCard({ p, i }) {
             </span>
             
             {/* Project Type Badge */}
-            <span className={`text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full ${
+            <span className={`text-[13px] uppercase tracking-wider font-bold px-2 py-0.5 rounded-full ${
               p.type === 'personal' 
-                ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20' 
-                : 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
+                ? 'text-main-theme' 
+                : 'text-main-theme'
             }`}>
               {p.type || 'Client'}
             </span>
