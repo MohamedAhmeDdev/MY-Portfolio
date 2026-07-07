@@ -117,22 +117,6 @@ export const PROJECTS = [
       lineColor: "#f59e0b" // Yellow/Amber
     }
   },
-  {
-    id: "08",
-    title: "Luxury Makeup Salon",
-    year: "2026",
-    tag: "E-Commerce / Booking",
-    type: "personal",
-    desc: "A modern web application for booking luxury salon services, showcasing premium makeup packages, and managing client appointments seamlessly.",
-    tech: ["vite.js", "Express.js", "MySQL", "Tailwind CSS"],
-    link: "https://glambyrahmah.netlify.app/",
-  cssVariables: {
-      accent: "var(--theme-blue-accent)",
-      bg: "var(--theme-blue-bg)",
-      hoverBorder: "var(--theme-blue-hover)",
-      lineColor: "#3b82f6" // Blue for trust/marketplace
-    }
-  }
 ];
 
 export const SKILLS = [
